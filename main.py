@@ -176,6 +176,43 @@ def main():
     # }
     # sh.batch_update(body)
 
+    # add formula
+    # sh.worksheet('5').update('M17', '10', raw=False)
+    # sh.worksheet('5').update('M18', '20', raw=False)
+    # sh.worksheet('5').update('M19', '=SUM(M17:M18)', raw=False)
+
+    # # format - digit
+    # sh.worksheet('5').format('N29',
+    #     {
+    #         "numberFormat": {
+    #             "type": "NUMBER",
+    #             "pattern": "#,##0",
+    #         },
+    #         'text_format': {
+    #             'foregroundColor': {
+    #                 "red": 0.9,
+    #                 "green": 0.2,
+    #                 "blue": 0.2
+    #             }
+    #         }
+    #     })
+
+    # format - date
+    sh.worksheet('5').format('N28',
+     {
+         "numberFormat": {
+             "type": "DATE",
+             "pattern": "DD.MM.YY"
+         },
+         'text_format': {
+             'foregroundColor': {
+                 "red": 1.0,
+                 "green": 0.0,
+                 "blue": 0.0
+             }
+         }
+     })
+
     print('Done')
 
 if __name__ == '__main__':
